@@ -1,6 +1,6 @@
 import z from "zod";
 
 export const signInSchema = z.object({
-    indentifier: z.email({message: "Please provide a valid email address"}).toLowerCase(),
+    indentifier: z.email({message: "Please provide a valid email address"}).toLowerCase(),  //email as a indentifier used in production language
     password: z.string().min(6, {message: "Password must be at least 6 characters long"})   
 })

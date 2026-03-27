@@ -1,4 +1,3 @@
-import { verifySchema } from './../../../schemas/verifySchema';
 import dbConnect from "@/lib/dbConnect";
 import UserModal from "@/model/User";
 import bcrypt from "bcryptjs";
@@ -9,6 +8,7 @@ export async function POST(request: Request){
 
     try{
         const {username, email, password} =  await request.json();
+        
         // Check if user already exists with same username or email
         const existingUserVerifiedByUsername = await UserModal.findOne({ username });
         if(existingUserVerifiedByUsername){
